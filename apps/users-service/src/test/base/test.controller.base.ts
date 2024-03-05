@@ -73,6 +73,7 @@ export class TestControllerBase {
           },
         },
 
+        results: true,
         updatedAt: true,
 
         user: {
@@ -111,6 +112,7 @@ export class TestControllerBase {
           },
         },
 
+        results: true,
         updatedAt: true,
 
         user: {
@@ -150,6 +152,7 @@ export class TestControllerBase {
           },
         },
 
+        results: true,
         updatedAt: true,
 
         user: {
@@ -212,6 +215,7 @@ export class TestControllerBase {
             },
           },
 
+          results: true,
           updatedAt: true,
 
           user: {
@@ -259,6 +263,7 @@ export class TestControllerBase {
             },
           },
 
+          results: true,
           updatedAt: true,
 
           user: {

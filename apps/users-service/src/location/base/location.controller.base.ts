@@ -221,6 +221,7 @@ export class LocationControllerBase {
           },
         },
 
+        results: true,
         updatedAt: true,
 
         user: {

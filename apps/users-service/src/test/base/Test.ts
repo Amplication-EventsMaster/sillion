@@ -9,11 +9,18 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { ObjectType, Field } from "@nestjs/graphql";
+import { ObjectType, Field, Float } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsOptional, IsString, ValidateNested } from "class-validator";
+import {
+  IsDate,
+  IsOptional,
+  IsString,
+  ValidateNested,
+  IsNumber,
+} from "class-validator";
 import { Type } from "class-transformer";
 import { Location } from "../../location/base/Location";
+import { Decimal } from "decimal.js";
 import { User } from "../../user/base/User";
 
 @ObjectType()
@@ -53,6 +60,17 @@ class Test {
   @Type(() => Location)
   @IsOptional()
   location?: Location | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Float, {
+    nullable: true,
+  })
+  results!: Decimal | null;
 
   @ApiProperty({
     required: true,

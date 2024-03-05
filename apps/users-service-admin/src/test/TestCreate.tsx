@@ -7,6 +7,7 @@ import {
   DateTimeInput,
   ReferenceInput,
   SelectInput,
+  NumberInput,
 } from "react-admin";
 
 import { LocationTitle } from "../location/LocationTitle";
@@ -24,6 +25,7 @@ export const TestCreate = (props: CreateProps): React.ReactElement => {
         >
           <SelectInput optionText={LocationTitle} />
         </ReferenceInput>
+        <NumberInput label="results" source="results" />
         <ReferenceInput source="user.id" reference="User" label="user">
           <SelectInput optionText={UserTitle} />
         </ReferenceInput>

@@ -16,6 +16,7 @@ import { Type } from "class-transformer";
 import { IsOptional, ValidateNested } from "class-validator";
 import { StringFilter } from "../../util/StringFilter";
 import { LocationWhereUniqueInput } from "../../location/base/LocationWhereUniqueInput";
+import { DecimalNullableFilter } from "../../util/DecimalNullableFilter";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 
 @InputType()
@@ -53,6 +54,17 @@ class TestWhereInput {
     nullable: true,
   })
   location?: LocationWhereUniqueInput;
+
+  @ApiProperty({
+    required: false,
+    type: DecimalNullableFilter,
+  })
+  @Type(() => DecimalNullableFilter)
+  @IsOptional()
+  @Field(() => DecimalNullableFilter, {
+    nullable: true,
+  })
+  results?: DecimalNullableFilter;
 
   @ApiProperty({
     required: false,
