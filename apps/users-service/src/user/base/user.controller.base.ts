@@ -229,6 +229,7 @@ export class UserControllerBase {
           },
         },
 
+        results: true,
         updatedAt: true,
 
         user: {

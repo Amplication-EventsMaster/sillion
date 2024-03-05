@@ -5,6 +5,7 @@ export type TestOrderByInput = {
   date?: SortOrder;
   id?: SortOrder;
   locationId?: SortOrder;
+  results?: SortOrder;
   updatedAt?: SortOrder;
   userId?: SortOrder;
 };

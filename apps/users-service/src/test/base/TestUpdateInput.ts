@@ -9,11 +9,12 @@ https://docs.amplication.com/how-to/custom-code
 
 ------------------------------------------------------------------------------
   */
-import { InputType, Field } from "@nestjs/graphql";
+import { InputType, Field, Float } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsDate, IsOptional, ValidateNested } from "class-validator";
+import { IsDate, IsOptional, ValidateNested, IsNumber } from "class-validator";
 import { Type } from "class-transformer";
 import { LocationWhereUniqueInput } from "../../location/base/LocationWhereUniqueInput";
+import { Decimal } from "decimal.js";
 import { UserWhereUniqueInput } from "../../user/base/UserWhereUniqueInput";
 
 @InputType()
@@ -40,6 +41,17 @@ class TestUpdateInput {
     nullable: true,
   })
   location?: LocationWhereUniqueInput | null;
+
+  @ApiProperty({
+    required: false,
+    type: Number,
+  })
+  @IsNumber()
+  @IsOptional()
+  @Field(() => Float, {
+    nullable: true,
+  })
+  results?: Decimal | null;
 
   @ApiProperty({
     required: false,
